@@ -104,11 +104,6 @@ dist
 .tern-port
 
 # local readFile.txt
-readFile.txt
-small.txt
-large.txt
-a_to_e.txt
-e_to_i.txt
-i_to_o.txt
-o_to_u.txt
-u_to_a.txt
+/readFile.txt
+
+*.txt
