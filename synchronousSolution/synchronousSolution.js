@@ -1,44 +1,54 @@
 const fs = require('fs');
-const readFile = './readFile.txt';
-const writeFile1 = './synchronousSolution/writeFile1.txt';
-const writeFile2 = './synchronousSolution/writeFile2.txt';
-const writeFile3 = './synchronousSolution/writeFile3.txt';
-const writeFile4 = './synchronousSolution/writeFile4.txt';
-const writeFile5 = './synchronousSolution/writeFile5.txt';
+const { Transform, pipeline } = require('stream');
+class Replace extends Transform {
+  constructor(options) {
+    super(options);
 
+    this.options = options;
+  }
 
-fs.readFile(readFile, (err, data) => {
-  if(err) throw err;
-  const lorem = data.toString();
-  const aLorem = lorem.replace(/a/gim, 'e');
-  const eLorem = lorem.replace(/e/gim, 'i');
-  const iLorem = lorem.replace(/i/gim, 'o');
-  const oLorem = lorem.replace(/o/gim, 'u');
-  const uLorem = lorem.replace(/u/gim, 'a');
+  _transform(chunk, encoding, callback) {
+    try {
+      const text = chunk
+        .toString()
+        .replace(this.options.searchValue, this.options.replaceValue);
 
-  fs.writeFileSync(writeFile1, aLorem, (err, data) => {
-    if(err) throw err;
-    console.log('a to e Complete!')
-  })
+      callback(null, text);
+    } catch (err) {
+      callback(err);
+    }
+  }
+}
 
-  fs.writeFileSync(writeFile2, eLorem, (err, data) => {
-    if(err) throw err;
-    console.log('e to i Complete!')
-  })
+const handleError = (err) => {
+  if (err) {
+    throw err;
+  }
+};
 
-  fs.writeFileSync(writeFile3, iLorem, (err, data) => {
-    if(err) throw err;
-    console.log('i to o Complete!')
-  })
+const inputFilepath = './large.txt';
+const outputFilepaths = [
+  './synchronousSolution/a_to_e.txt',
+  './synchronousSolution/e_to_i.txt',
+  './synchronousSolution/i_to_o.txt',
+  './synchronousSolution/o_to_u.txt',
+  './synchronousSolution/u_to_a.txt',
+];
 
-  fs.writeFileSync(writeFile4, oLorem, (err, data) => {
-    if(err) throw err;
-    console.log('u to a Complete!')
-  })
+const inputStream = fs.createReadStream(inputFilepath);
 
-  fs.writeFileSync(writeFile5, uLorem, (err, data) => {
-    if(err) throw err;
-    console.log('a to e Complete!')
-  })
-})
+const replaceTransformStreams = [
+  new Replace({ searchValue: /a/gim, replaceValue: 'e' }),
+  new Replace({ searchValue: /e/gim, replaceValue: 'i' }),
+  new Replace({ searchValue: /i/gim, replaceValue: 'o' }),
+  new Replace({ searchValue: /o/gim, replaceValue: 'u' }),
+  new Replace({ searchValue: /u/gim, replaceValue: 'a' }),
+];
 
+for (let i = 0; i < replaceTransformStreams.length; i += 1) {
+  const currentTransform = replaceTransformStreams[i];
+  const currentOutputFilepath = outputFilepaths[i];
+  const currentOutputStream = fs.createWriteStream(currentOutputFilepath);
+
+  pipeline(inputStream, currentTransform, currentOutputStream, handleError);
+}
