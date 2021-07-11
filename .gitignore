@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # local readFile.txt
-/readFile.txt
+readFile.txt
