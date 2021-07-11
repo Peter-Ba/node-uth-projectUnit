@@ -105,3 +105,5 @@ dist
 
 # local readFile.txt
 /readFile.txt
+
+*.txt
