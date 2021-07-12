@@ -26,7 +26,7 @@ const handleError = (err) => {
   }
 };
 
-const inputFilepath = './large.txt';
+const inputFilepath = './data/large.txt';
 const outputFilepaths = [
   './synchronousSolution/a_to_e.txt',
   './synchronousSolution/e_to_i.txt',
