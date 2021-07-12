@@ -12,9 +12,12 @@
     "url": "git+https://github.com/Peter-Ba/node-uth-projectUnit.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Peter-Ba/node-uth-projectUnit/issues"
   },
-  "homepage": "https://github.com/Peter-Ba/node-uth-projectUnit#readme"
+  "homepage": "https://github.com/Peter-Ba/node-uth-projectUnit#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
