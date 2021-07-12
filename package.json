@@ -1,0 +1,19 @@
+{
+  "name": "node-uth-parallelism",
+  "version": "0.1.0",
+  "description": "Unit problems to help students explore different ways off accomplishing parallelism in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peter-Ba/node-uth-projectUnit.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Peter-Ba/node-uth-projectUnit/issues"
+  },
+  "homepage": "https://github.com/Peter-Ba/node-uth-projectUnit#readme"
+}
