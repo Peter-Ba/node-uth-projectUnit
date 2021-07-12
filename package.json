@@ -1,7 +1,7 @@
 {
   "name": "node-uth-parallelism",
   "version": "0.1.0",
-  "description": "Unit problems to help students explore different ways off accomplishing parallelism in Node.js",
+  "description": "Unit problems to help students explore different ways of accomplishing parallelism in Node.js",
   "main": "index.js",
   "scripts": {
     "clean" : "rm ./output/*.txt",
