@@ -28,11 +28,11 @@ const handleError = (err) => {
 
 const inputFilepath = './data/large.txt';
 const outputFilepaths = [
-  './synchronousSolution/a_to_e.txt',
-  './synchronousSolution/e_to_i.txt',
-  './synchronousSolution/i_to_o.txt',
-  './synchronousSolution/o_to_u.txt',
-  './synchronousSolution/u_to_a.txt',
+  './output/a_to_e.txt',
+  './output/e_to_i.txt',
+  './output/i_to_o.txt',
+  './output/o_to_u.txt',
+  './output/u_to_a.txt',
 ];
 
 const inputStream = fs.createReadStream(inputFilepath);
