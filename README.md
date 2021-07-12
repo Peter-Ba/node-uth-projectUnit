@@ -6,13 +6,13 @@ Node.js lends itself well to in fulfilling the role of a backend runtime environ
 
 Fortunately, there are several ways to accomplish parallel task execution in Node.js. In this repo, we will cover four different approaches to achieve the same goal.
 
-`Simple Streams`
+1. `Simple Streams`
 
-[`Node.js Child Processes API`](https://nodejs.org/docs/latest-v14.x/api/child_process.html)
+2. [`Node.js Child Processes API`](https://nodejs.org/docs/latest-v14.x/api/child_process.html)
 
-[`Node.js Cluster API`](https://nodejs.org/docs/latest-v14.x/api/cluster.html)
+3. [`Node.js Cluster API`](https://nodejs.org/docs/latest-v14.x/api/cluster.html)
 
-[`Node.js Worker Threads API`](https://nodejs.org/docs/latest-v14.x/api/worker_threads.html)
+4. [`Node.js Worker Threads API`](https://nodejs.org/docs/latest-v14.x/api/worker_threads.html)
 
 Before getting started, download this [large text file](https://drive.google.com/file/d/1nnzoInijnvSOJSBbSelF5yuNpMUfwZvO/view?usp=sharing) (approx. 550mb). This will be your sample input data for each challenge. Place the downloaded file into the `data` directory.
 
