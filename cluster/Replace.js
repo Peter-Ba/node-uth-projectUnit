@@ -1,5 +1,4 @@
 const { Transform } = require('stream');
-
 class Replace extends Transform {
   constructor(options) {
     super(options);

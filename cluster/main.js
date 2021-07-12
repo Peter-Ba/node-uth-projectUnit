@@ -24,11 +24,11 @@ if (cluster.isMaster) {
   ];
 
   const outputFilepaths = [
-    './cluster/a_to_e.txt',
-    './cluster/e_to_i.txt',
-    './cluster/i_to_o.txt',
-    './cluster/o_to_u.txt',
-    './cluster/u_to_a.txt',
+    './output/a_to_e.txt',
+    './output/e_to_i.txt',
+    './output/i_to_o.txt',
+    './output/o_to_u.txt',
+    './output/u_to_a.txt',
   ];
 
   const readStream = fs.createReadStream('./data/large.txt');
